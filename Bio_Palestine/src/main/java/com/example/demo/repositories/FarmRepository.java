@@ -10,5 +10,8 @@ import com.example.demo.models.Farm;
 
 @Repository
 public interface FarmRepository extends CrudRepository<Farm, Long> {
+	
+	//retrieve all farms
 	List<Farm> findAll();
+	
 }

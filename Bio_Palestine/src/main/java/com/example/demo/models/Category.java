@@ -1,11 +1,16 @@
 package com.example.demo.models;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -30,6 +35,13 @@ public class Category {
 	 	@NotNull(message="Must be not null")
 	 	@Size(min=5,max=50,message = "Must be at least five charactar")
 	 	private String categoryDescription;
+	 	
+	 	@ManyToOne(fetch = FetchType.LAZY)
+	 	@JoinColumn(name="categoriesIncluded")
+	 	private Farm farmItself;
+	 	
+	 	@OneToMany(mappedBy="categoryType", fetch=FetchType.LAZY)
+	 	private List<Product> products;
 	 	
 	 	@Column(updatable=false)
 	    @DateTimeFormat(pattern="yyyy-MM-dd")

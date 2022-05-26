@@ -4,9 +4,12 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -39,7 +42,12 @@ public class Product {
 	    @NotNull(message="Must be not null")
 	    @Size(min=3)
 	    private String productAvailbilty;
-
+	    
+	    @ManyToOne(fetch=FetchType.LAZY)
+	    @JoinColumn(name="category")
+	    private Category categoryType;
+	    
+	    
 	    @Column(updatable=false)
 	    @DateTimeFormat(pattern="yyyy-MM-dd")
 	    private Date createdAt;
