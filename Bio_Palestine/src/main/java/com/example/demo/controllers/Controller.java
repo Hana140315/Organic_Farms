@@ -24,4 +24,12 @@ public class Controller {
 	public String product() {
 		return "product.jsp";
 	}
+	@GetMapping("/login")
+	public String login() {
+		return "login.jsp";
+	}
+	@GetMapping("/register")
+	public String register() {
+		return "register.jsp";
+	}
 }

@@ -67,8 +67,8 @@
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                    <a href="/" class="nav-item nav-link">Home</a>
                 <a href="/product" class="nav-item nav-link">Products</a>
-                <a href="#" class="nav-item nav-link"><span class="text-secondary">Login</span></a>
-                <a href="#" class="nav-item nav-link"><span class="fw-bold text-primary m-0">Regester</span></a>
+                <a href="/login" class="nav-item nav-link"><span class="text-secondary">Login</span></a>
+                <a href="/register" class="nav-item nav-link"><span class="fw-bold text-primary m-0">Register</span></a>
                 <a href="/about" class="nav-item nav-link">About Us</a>
                 <a href="/contactUs" class="nav-item nav-link">Contact Us</a>
                 </div>
@@ -79,16 +79,40 @@
     <!-- Navbar End -->
 
     <!-- Page Header Start -->
+    
     <div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
             <h1 class="display-3 mb-3 animated slideInDown">Products</h1>
            <p>For our products it is organic and healthy just click in photo to give you more details</p>
         </div>
+         <br><br>
+    <br><br>
+    <br><br>
+       <br><br>
+    <br><br>
+    <br><br>
+      <br><br>
+    <br><br>
+    <br><br>
     </div>
+   
     <!-- Page Header End -->
 
 
     <!-- Product Start -->
+    <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
+                    <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
+                        <li class="nav-item me-2">
+                            <a class="btn btn-outline-primary border-2 active" data-bs-toggle="pill" href="#tab-1">Vegetable</a>
+                        </li>
+                        <li class="nav-item me-2">
+                            <a class="btn btn-outline-primary border-2" data-bs-toggle="pill" href="#tab-2">Fruits </a>
+                        </li>
+                        <li class="nav-item me-0">
+                            <a class="btn btn-outline-primary border-2" data-bs-toggle="pill" href="#tab-3">Fresh</a>
+                        </li>
+                    </ul>
+                </div>
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-0 gx-5 align-items-end">
