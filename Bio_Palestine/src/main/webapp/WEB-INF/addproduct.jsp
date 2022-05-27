@@ -9,18 +9,15 @@
 <!-- for rendering errors on PUT routes -->
 <%@ page isErrorPage="true" %>
 <!DOCTYPE html>
-<html >
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Welcome</title>
+    <title>Add Product</title>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css"> <!-- change to match your file/naming structure -->
     <script src="/webjars/jquery/jquery.min.js"></script>
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -56,44 +53,103 @@
     <!-- Spinner End -->
 
 
-    <!-- Navbar Start -->
+     <!-- Navbar Start -->
  
 
-        <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-            <a href="/" class="navbar-brand ms-4 ms-lg-0">
-                <h1 class="fw-bold text-primary m-0">Bio <span class="text-secondary">Palestine</span></h1>
-            </a>
-            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    
-                    <a href="/" class="nav-item nav-link">Home</a>
-                <a href="/product/new" class="nav-item nav-link">Add Products</a>
-                 <a href="/category/new" class="nav-item nav-link">Add Category</a>
-                <a href="/logout" class="nav-item nav-link"><span class="fw-bold text-primary m-0">Log out</span></a>
-                </div>
+     <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+        <a href="/" class="navbar-brand ms-4 ms-lg-0">
+            <h1 class="fw-bold text-primary m-0">Bio <span class="text-secondary">Palestine</span></h1>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
                 
+               <a href="/home" class="nav-item nav-link">Home</a>
+                <a href="/product" class="nav-item nav-link">Add Category</a>
+                 <a href="/about" class="nav-item nav-link text-secondary">log out</a>
+       
+               
+              
             </div>
-        </nav>
-    </div>
-    <!-- Navbar End -->
+            
+        </div>
+    </nav>
+</div>
+<!-- Navbar End -->
 
 
     <!-- Page Header Start -->
     <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
+    
         <div class="container">
-            <h1 class="display-3 mb-3 animated slideInDown">Welcome ${currentUser.farmName}</h1>
-           
+         <h1 class="fw-bold text-primary m-0">Register Your Farm</h1>
+         <br><br>
+          <form:form action="/product/new" method="post" modelAttribute="product">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <form:input type="text" class="form-control" path="productName" id="name" placeholder="Farm Name"/>
+                                    <form:label for="name" path="productName">Product Name</form:label>
+                                    <form:errors path="productName" style="color:red;" />
+                                </div>
+                            </div>
+                            <br>
+                              <div class="col-md-6">
+                                <div class="form-floating">
+                                    <form:input type="number" path="productPrice" class="form-control" id="name" placeholder="Your Phone Number"/>
+                                    <form:label for="name" path="productPrice" >Product Price</form:label>
+                                    <form:errors path="productPrice" style="color:red;" />
+                                </div>
+                            </div>
+                            <br>
+                          
+                             <div class="col-md-6">
+                                <div class="form-floating">
+                                    <form:input type="text" path="productFact" class="form-control" id="name" placeholder="Your Password"/>
+                                    <form:label for="name" path="productFact">Product Fact</form:label>
+                                    <form:errors path="productFact" style="color:red;" />
+                                </div>
+                            </div>
+                            <br>
+                             <div class="col-md-6">
+                                <div class="form-floating">
+                                    <form:input type="number" path="productAvailbilty" class="form-control" id="name" placeholder="Your Password"/>
+                                    <form:label for="name" path="productAvailbilty">Product Availbilty</form:label>
+                                    <form:errors path="productAvailbilty" style="color:red;" />
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+		                           <form:select path="categoryType"  class="form-control" id="inputEmail3">
+									      <c:forEach var="category" items="${allCategories}">
+									  		<form:option value="${category.id}">
+									  		<c:out value="${category.name}" />
+									  		</form:option>
+		  	
+											 </c:forEach>
+									</form:select>
+									 </div>
+                           	 </div>
+                              <div class="col-12">
+                                <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Add Product</button>
+                            </div>
+            </form:form>
         </div>
     </div>
+       
     <!-- Page Header End -->
+
+ 
+                
+
+
+ 
 
 
    
-        
- <!-- Footer Start -->
+    <!-- Footer Start -->
     <div class="container-fluid bg-dark footer pt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
@@ -133,8 +189,6 @@
     </div>
     <!-- Footer End -->
 
-
-  
 
 
     <!-- JavaScript Libraries -->
