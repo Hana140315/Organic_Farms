@@ -16,10 +16,10 @@ public interface CategoryRepository extends CrudRepository <Category, Long>{
 	List<Category> findAll();
 	
 	//retrieve a list of categories in a specific farm
-	List<Category> findAllByProducts(Product product);
+	List<Category> findAllByFarmItself(Farm farm);
 	
 	//retrieve a list of categories not included in a specific farm
-	List<Category> findByProductsNotContains(Product product);
+	List<Category> findByFarmItselfNotContains(Farm farm);
 	
 	Optional<Category> findById(Long id);
 }

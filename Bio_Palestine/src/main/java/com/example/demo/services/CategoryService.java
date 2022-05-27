@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.models.Category;
+import com.example.demo.models.Farm;
 import com.example.demo.models.Product;
 import com.example.demo.repositories.CategoryRepository;
 
@@ -19,8 +20,8 @@ public class CategoryService {
         return categoryrepo.findAll();
     }
 	
-	public List<Category> findbyproducts(Product product){
-		return categoryrepo.findAllByProducts(product);
+	public List<Category> findbyproducts(Farm farm){
+		return categoryrepo.findAllByFarmItself(farm);
 	}
 	
 	public Category addCategory(Category c) {
@@ -31,8 +32,8 @@ public class CategoryService {
 		return categoryrepo.findById(id).get();
 	}
 	
-	public List<Category> findbyProductsNotContan(Product product){
-		return categoryrepo.findByProductsNotContains(product);
+	public List<Category> findbyProductsNotContan(Farm farm){
+		return categoryrepo.findByFarmItselfNotContains(farm);
 	}
 	
 	public void addProductsToCategory(Category this_category,Product selcted_product) {
