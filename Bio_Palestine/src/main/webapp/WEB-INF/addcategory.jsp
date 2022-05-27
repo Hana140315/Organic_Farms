@@ -13,7 +13,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Add Product</title>
+    <title>Add Category</title>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css"> <!-- change to match your file/naming structure -->
     <script src="/webjars/jquery/jquery.min.js"></script>
@@ -84,7 +84,7 @@
     <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
     
         <div class="container">
-         <h1 class="fw-bold text-primary m-0">Register Your Farm</h1>
+         <h1 class="fw-bold text-primary m-0">Add Category</h1>
          <br><br>
           <form:form action="/category/new" method="post" modelAttribute="category">
                             <div class="col-md-6">

@@ -84,7 +84,7 @@
     <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
     
         <div class="container">
-         <h1 class="fw-bold text-primary m-0">Register Your Farm</h1>
+         <h1 class="fw-bold text-primary m-0">Add product</h1>
          <br><br>
           <form:form action="/product/new" method="post" modelAttribute="product">
                             <div class="col-md-6">

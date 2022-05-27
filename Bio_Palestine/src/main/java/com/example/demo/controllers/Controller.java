@@ -75,15 +75,20 @@ public class Controller {
     	return "redirect:/";
 	}
 	@GetMapping("/product/new")
-	public String newproduct(Model model,@ModelAttribute("product") Product product) {
+	public String newproduct(Model model,@ModelAttribute("product") Product product,HttpSession session) {
 		List<Category> categories = catServce.allCategories();
 		model.addAttribute("allCategories",categories);
+		Long userId=(Long)session.getAttribute("userId");
+		Farm currenUser=farmServ.findbyId(userId);
+		model.addAttribute("currentUser", currenUser);
 		return "addproduct.jsp";
 	}
 	
 	@GetMapping("/category/new")
-	public String newcategory(@ModelAttribute("category") Category category) {
-		
+	public String newcategory(Model model,@ModelAttribute("category") Category category,HttpSession session) {
+		Long userId=(Long)session.getAttribute("userId");
+		Farm currenUser=farmServ.findbyId(userId);
+		model.addAttribute("currentUser", currenUser);
 		return "addcategory.jsp";
 	}
 	
