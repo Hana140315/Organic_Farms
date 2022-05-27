@@ -15,6 +15,7 @@ import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -38,7 +39,7 @@ public class Farm {
 	private String farmAddress;
 	
 	@NotNull(message="Phone must be not null")
-	@Size(min=10, message="at least ten number")
+	@Min(value=10, message="at least ten number")
 	private int farmPhone;
 	
 	@NotNull(message="Location must be not null")

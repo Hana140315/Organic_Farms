@@ -86,62 +86,72 @@
         <div class="container">
          <h1 class="fw-bold text-primary m-0">Register Your Farm</h1>
          <br><br>
+          <form:form action="/register" method="post" modelAttribute="newUser">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Farm Name</label>
+                                    <form:input type="text" class="form-control" path="farmName" id="name" placeholder="Farm Name"/>
+                                    <form:label for="name" path="farmName">Farm Name</form:label>
+                                    <form:errors path="farmName" style="color:red;" />
                                 </div>
                             </div>
                             <br>
                               <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="number" class="form-control" id="name" placeholder="Your Phone Number">
-                                    <label for="name">Phone Number</label>
+                                    <form:input type="number" path="farmPhone" class="form-control" id="name" placeholder="Your Phone Number"/>
+                                    <form:label for="name" path="farmPhone" >Phone Number</form:label>
+                                    <form:errors path="farmPhone" style="color:red;" />
                                 </div>
                             </div>
                             <br>
                           
                              <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Password">
-                                    <label for="name">Address</label>
+                                    <form:input type="text" path="farmAddress" class="form-control" id="name" placeholder="Your Password"/>
+                                    <form:label for="name" path="farmAddress">Address</form:label>
+                                    <form:errors path="farmAddress" style="color:red;" />
                                 </div>
                             </div>
                             <br>
                              <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Password">
-                                    <label for="name">Location</label>
+                                    <form:input type="text" path="farmLocation" class="form-control" id="name" placeholder="Your Password"/>
+                                    <form:label for="name" path="farmLocation">Location</form:label>
+                                    <form:errors path="farmAddress" style="color:red;" />
                                 </div>
                             </div>
                             <br>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
+                                    <form:input type="email" path="email" class="form-control" id="email" placeholder="Your Email"/>
+                                    <form:label for="email" path="email">Your Email</form:label>
+                                    <form:errors path="email" style="color:red;" />
                                 </div>
                             </div>
                             <br>
                              <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="password" class="form-control" id="name" placeholder="Your Password">
-                                    <label for="name">Password</label>
+                                    <form:input type="password" path="password" class="form-control" id="name" placeholder="Your Password"/>
+                                    <form:label for="name" path="password">Password</form:label>
+                                     <form:errors path="password" style="color:red;" />
+                                     
                                 </div>
                             </div>
                             <br>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="password" class="form-control" id="email" placeholder="Confirm Password">
-                                    <label for="email">Confirm Password</label>
+                                    <form:input type="password" path="confirm" class="form-control" id="email" placeholder="Confirm Password"/>
+                                    <form:label for="confirm" path="confirm">Confirm Password</form:label>
+                                     <form:errors path="confirm" style="color:red;" />
                                 </div>
                             </div>
                             <br>
                               <div class="col-12">
                                 <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Register</button>
                             </div>
-            
+            </form:form>
         </div>
     </div>
+       
     <!-- Page Header End -->
 
  

@@ -89,18 +89,20 @@
                            
                             
                           
-                         
+                          <form:form action="/login" method="post" modelAttribute="newLogin">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
+                                    <form:input type="email" path="email" class="form-control" id="email" placeholder="Your Email"/>
+                                    <form:label for="email" path="email">Your Email</form:label>
+                                     <form:errors path="email" style="color:green;" />
                                 </div>
                             </div>
                             <br>
                              <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="password" class="form-control" id="name" placeholder="Your Password">
-                                    <label for="name">Password</label>
+                                    <form:input type="password" path="password" class="form-control" id="name" placeholder="Your Password"/>
+                                    <form:label for="name" path="password">Password</form:label>
+                                     <form:errors path="password" style="color:green;" />
                                 </div>
                             </div>
                             
@@ -108,6 +110,7 @@
                               <div class="col-12">
                                 <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Log in</button>
                             </div>
+                            </form:form>
             <br>
             <br>
             <br>
