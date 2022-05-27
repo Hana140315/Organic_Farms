@@ -77,6 +77,22 @@ public class Category {
 			this.categoryDescription = categoryDescription;
 		}
 	 	
+		public Farm getFarmItself() {
+			return farmItself;
+		}
+
+		public void setFarmItself(Farm farmItself) {
+			this.farmItself = farmItself;
+		}
+
+		public List<Product> getProducts() {
+			return products;
+		}
+
+		public void setProducts(List<Product> products) {
+			this.products = products;
+		}
+
 		@PrePersist
 	    protected void onCreate(){
 	        this.createdAt = new Date();

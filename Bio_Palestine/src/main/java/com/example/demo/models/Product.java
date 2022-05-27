@@ -113,6 +113,16 @@ public class Product {
 //	    @Column(name="product_picture")
 //	    ByteArray productPicture;
 	    
+		public Category getCategoryType() {
+			return categoryType;
+		}
+
+
+		public void setCategoryType(Category categoryType) {
+			this.categoryType = categoryType;
+		}
+
+
 		@PrePersist
 	    protected void onCreate(){
 	        this.createdAt = new Date();

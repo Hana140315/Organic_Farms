@@ -68,7 +68,23 @@ public class Farm {
     private List<Category> categoriesIncluded;
     
     
-    public Farm() {
+    public String getFarmLocation() {
+		return farmLocation;
+	}
+
+	public void setFarmLocation(String farmLocation) {
+		this.farmLocation = farmLocation;
+	}
+
+	public List<Category> getCategoriesIncluded() {
+		return categoriesIncluded;
+	}
+
+	public void setCategoriesIncluded(List<Category> categoriesIncluded) {
+		this.categoriesIncluded = categoriesIncluded;
+	}
+
+	public Farm() {
 	
 	}
 
