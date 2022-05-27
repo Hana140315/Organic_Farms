@@ -67,7 +67,7 @@
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 
                <a href="/home" class="nav-item nav-link">Home</a>
-                <a href="/category/new" class="nav-item nav-link">Add Category</a>
+                <a href="/product/new" class="nav-item nav-link">Add Product</a>
                  <a href="/logout" class="nav-item nav-link text-secondary">log out</a>
        
                
@@ -86,54 +86,29 @@
         <div class="container">
          <h1 class="fw-bold text-primary m-0">Register Your Farm</h1>
          <br><br>
-          <form:form action="/product/new" method="post" modelAttribute="product">
+          <form:form action="/category/new" method="post" modelAttribute="category">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <form:input type="text" class="form-control" path="productName" id="name" placeholder="Farm Name"/>
-                                    <form:label for="name" path="productName">Product Name</form:label>
-                                    <form:errors path="productName" style="color:red;" />
+                                    <form:input type="text" class="form-control" path="categoryTitle" id="name" placeholder="Farm Name"/>
+                                    <form:label for="name" path="categoryTitle">Category Title</form:label>
+                                    <form:errors path="categoryTitle" style="color:red;" />
                                 </div>
                             </div>
                             <br>
                               <div class="col-md-6">
                                 <div class="form-floating">
-                                    <form:input type="number" path="productPrice" class="form-control" id="name" placeholder="Your Phone Number"/>
-                                    <form:label for="name" path="productPrice" >Product Price</form:label>
-                                    <form:errors path="productPrice" style="color:red;" />
+                                    <form:input type="text" path="categoryDescription" class="form-control" id="name" placeholder="Your Phone Number"/>
+                                    <form:label for="name" path="categoryDescription" >Category Description</form:label>
+                                    <form:errors path="categoryDescription" style="color:red;" />
                                 </div>
                             </div>
                             <br>
                           
-                             <div class="col-md-6">
-                                <div class="form-floating">
-                                    <form:input type="text" path="productFact" class="form-control" id="name" placeholder="Your Password"/>
-                                    <form:label for="name" path="productFact">Product Fact</form:label>
-                                    <form:errors path="productFact" style="color:red;" />
-                                </div>
-                            </div>
-                            <br>
-                             <div class="col-md-6">
-                                <div class="form-floating">
-                                    <form:input type="number" path="productAvailbilty" class="form-control" id="name" placeholder="Your Password"/>
-                                    <form:label for="name" path="productAvailbilty">Product Availbilty</form:label>
-                                    <form:errors path="productAvailbilty" style="color:red;" />
-                                </div>
-                            </div>
-                            <br>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-		                           <form:select path="categoryType"  class="form-control" id="inputEmail3">
-									      <c:forEach var="category" items="${allCategories}">
-									  		<form:option value="${category.id}">
-									  		<c:out value="${category.name}" />
-									  		</form:option>
-		  	
-											 </c:forEach>
-									</form:select>
-									 </div>
-                           	 </div>
+                             
+                          
+                      
                               <div class="col-12">
-                                <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Add Product</button>
+                                <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Add Category</button>
                             </div>
             </form:form>
         </div>
@@ -180,7 +155,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="/">Bio Palestine</a>, All Right Reserved.
+                        &copy; <a href="#">Bio Palestine</a>, All Right Reserved.
                     </div>
                     
                 </div>
@@ -191,7 +166,7 @@
 
 
 
-    <!-- JavaScript Libraries -->
+   <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>

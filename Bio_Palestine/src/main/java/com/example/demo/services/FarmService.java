@@ -63,6 +63,9 @@ public class FarmService {
 	    }
 	    	}
 	    
+	    public Farm update(Farm farm) {
+	    	return farmRepo.save(farm);
+	    }
 	   public Farm findbyId(Long id) {
 		   return farmRepo.findById(id).orElse(null);  
 	   }

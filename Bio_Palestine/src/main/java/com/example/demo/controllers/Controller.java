@@ -84,7 +84,7 @@ public class Controller {
 	@GetMapping("/category/new")
 	public String newcategory(@ModelAttribute("category") Category category) {
 		
-		return "newcategory.jsp";
+		return "addcategory.jsp";
 	}
 	
 	

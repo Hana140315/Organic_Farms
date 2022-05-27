@@ -1,5 +1,6 @@
 package com.example.demo.models;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -171,6 +172,12 @@ public class Farm {
 		this.confirm = confirm;
 	}
 
+	public void addcategoryToFarm(Category category) {
+		if(this.categoriesIncluded==null) {
+			this.categoriesIncluded=new ArrayList<Category>();
+		}
+		this.categoriesIncluded.add(category);
+	}
 
 
 	@PrePersist
