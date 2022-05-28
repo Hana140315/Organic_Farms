@@ -103,7 +103,7 @@
                                         <a class="text-body" href=""><i class="fa fa-pen text-primary me-2"></i>Edit</a>
                                     </small>
                                     <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="far fa-times-circle text-primary me-2"></i>Delete</a>
+                                        <a class="text-body" href="/delete/${products.id}"><i class="far fa-times-circle text-primary me-2"></i>Delete</a>
                                     </small>
                                 </div>
                             </div>

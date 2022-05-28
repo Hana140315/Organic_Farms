@@ -37,6 +37,9 @@ public class ProductService {
 		return productrepo.findByCategoryTypeNotContains(category);
 	}
 	
-	
+	   public void deleteProduct(Long id) {
+	        
+		   productrepo.deleteById(id);
+	    }
 	
 }

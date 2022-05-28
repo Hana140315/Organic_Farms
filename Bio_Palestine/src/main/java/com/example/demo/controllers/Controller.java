@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.models.Category;
@@ -92,6 +93,11 @@ public class Controller {
 		return "addcategory.jsp";
 	}
 	
+	 @GetMapping("/delete/{id}")
+	    public String destroy(@PathVariable("id") Long id) {
+		 proServce.deleteProduct(id);
+	        return "redirect:/home";
+	    }
 	
 	
 }

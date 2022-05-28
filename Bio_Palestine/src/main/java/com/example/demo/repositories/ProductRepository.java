@@ -22,4 +22,6 @@ public interface ProductRepository extends CrudRepository<Product, Long>{
 	List<Product> findByCategoryTypeNotContains(Category category);
 	
 	Optional<Product> findById(Long id);
+	
+	void deleteById(Long id);
 }
