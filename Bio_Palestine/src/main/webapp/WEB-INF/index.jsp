@@ -200,13 +200,16 @@
                 </div>
         
             </div>
+               
             <div class="tab-content">
                 <div id="tab-1" class="tab-pane fade show p-0 active">
-                    <c:forEach var="products" items="${product}">
+                   
 		       <div class="row g-4">
                        
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+							<c:forEach var="products" items="${product}">
                             <div class="product-item">
+                             
                                 <div class="position-relative bg-light overflow-hidden">
                                     <img class="img-fluid w-100" src="img/product-1.jpg" alt="">
                                 </div>
@@ -214,13 +217,15 @@
                                     <a class="d-block h5 mb-2 " href="/detail/${products.id}"><i class="fa fa-eye text-primary me-2"></i>${products.productName }</a>
                                     <span class="text-primary me-1"> ${products.productPrice}$/Kilo</span>
                                 </div>
-                               
+                                
                             </div>
+                          </c:forEach>
                         </div>
                         </div>
-		      </c:forEach>
+		     
                 </div>
             </div>
+              
         </div>
     </div>
     <!-- Product End -->

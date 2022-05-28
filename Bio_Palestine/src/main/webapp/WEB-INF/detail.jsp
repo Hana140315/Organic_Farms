@@ -87,6 +87,16 @@
     <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
             <h1 class="display-3 mb-3 animated slideInDown">About ${thisProduct.productName }</h1>
+            <h4>Description:</h4>
+            <p>${thisProduct.categoryType.categoryDescription }</p>
+              <p>Fact of Product: ${thisProduct.productFact}</p>
+            <p>available: ${thisProduct.productAvailbilty}</p>
+            <h4>Contact Information:</h4>
+            <p>Responsible Person: ${thisProduct.farm.farmName}</p>
+            <p>Mobile Number: ${thisProduct.farm.farmPhone}</p>
+            <p>Address: ${thisProduct.farm.farmAddress}, ${thisProduct.farm.farmLocation}</p>
+            <p>Email: ${thisProduct.farm.email}</p>
+          
             
         </div>
     </div>
