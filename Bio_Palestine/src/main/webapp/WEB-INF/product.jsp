@@ -102,15 +102,12 @@
     <!-- Product Start -->
     <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
                     <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
+                    <c:forEach var="category" items="${category}">
                         <li class="nav-item me-2">
-                            <a class="btn btn-outline-primary border-2 active" data-bs-toggle="pill" href="#tab-1">Vegetable</a>
+                            <a class="btn btn-outline-primary border-2 active" data-bs-toggle="pill" href="#tab-1">${category.categoryTitle}</a>
                         </li>
-                        <li class="nav-item me-2">
-                            <a class="btn btn-outline-primary border-2" data-bs-toggle="pill" href="#tab-2">Fruits </a>
-                        </li>
-                        <li class="nav-item me-0">
-                            <a class="btn btn-outline-primary border-2" data-bs-toggle="pill" href="#tab-3">Fresh</a>
-                        </li>
+                      </c:forEach>
+                       
                     </ul>
                 </div>
     <div class="container-xxl py-5">

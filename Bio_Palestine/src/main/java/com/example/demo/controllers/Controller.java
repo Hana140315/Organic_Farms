@@ -65,7 +65,9 @@ public class Controller {
 	@GetMapping("/product")
 	public String product(Model model) {
 		List<Product> products = proServce.allProducts();
+		List<Category> categories = catServce.allCategories();
 		model.addAttribute("product",products);
+		model.addAttribute("category",categories);
 		return "product.jsp";
 	}
 	

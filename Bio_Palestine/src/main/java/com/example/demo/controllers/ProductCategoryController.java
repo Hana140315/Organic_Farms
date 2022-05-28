@@ -68,13 +68,15 @@ public class ProductCategoryController {
 	}
 	
 	@PutMapping("/edit/{id}")
-    public String update(@Valid @ModelAttribute("product") Product product ,HttpSession session, BindingResult result) {
+    public String update(@Valid @ModelAttribute("product") Product product ,HttpSession session, BindingResult result,Principal principal) {
         if (result.hasErrors()) {
             return "edit.jsp";
         } else {
-        	Long userId=(Long)session.getAttribute("userId");
-    		Farm currenUser=farmServ.findbyId(userId);
-    		product.setFarm(currenUser);
+        	String username = principal.getName();
+    	    session.setAttribute("currenUser", farmServ.findByEmail(username));
+//        	Long userId=(Long)session.getAttribute("userId");
+//    		Farm currenUser=farmServ.findbyId(userId);
+    		product.setFarm(farmServ.findByEmail(username));
     		proServce.updateProduct(product);
             return "redirect:/home";
         }
