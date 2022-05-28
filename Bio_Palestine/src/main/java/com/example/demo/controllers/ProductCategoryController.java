@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.example.demo.models.Category;
 import com.example.demo.models.Farm;
@@ -58,4 +59,16 @@ public class ProductCategoryController {
 	    return "redirect:/home";
 	        }
 	}
+	@PutMapping("/edit/{id}")
+    public String update(@Valid @ModelAttribute("product") Product product ,HttpSession session, BindingResult result) {
+        if (result.hasErrors()) {
+            return "edit.jsp";
+        } else {
+        	Long userId=(Long)session.getAttribute("userId");
+    		Farm currenUser=farmServ.findbyId(userId);
+    		product.setFarm(currenUser);
+    		proServce.updateProduct(product);
+            return "redirect:/home";
+        }
+    }
 }

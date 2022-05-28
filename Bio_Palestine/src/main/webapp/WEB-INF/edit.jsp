@@ -13,7 +13,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Welcome</title>
+    <title>Edit Product</title>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css"> <!-- change to match your file/naming structure -->
     <script src="/webjars/jquery/jquery.min.js"></script>
@@ -49,16 +49,19 @@
 </head>
 
 <body>
-    <!-- Spinner Start -->
+   
+
+<!-- Spinner Start -->
+     <!-- 
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" role="status"></div>
-    </div>
+    </div> -->
     <!-- Spinner End -->
 
 
     <!-- Navbar Start -->
  
-
+<!--
         <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
             <a href="/" class="navbar-brand ms-4 ms-lg-0">
                 <h1 class="fw-bold text-primary m-0">Bio <span class="text-secondary">Palestine</span></h1>
@@ -70,54 +73,87 @@
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                     
                     <a href="/" class="nav-item nav-link">Home</a>
-                <a href="/product/new" class="nav-item nav-link">Add Products</a>
                  <a href="/category/new" class="nav-item nav-link">Add Category</a>
                 <a href="/logout" class="nav-item nav-link"><span class="fw-bold text-primary m-0">Log out</span></a>
                 </div>
                 
             </div>
         </nav>
-    </div>
+      -->
     <!-- Navbar End -->
-
+                           
 
     <!-- Page Header Start -->
     <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
+    
         <div class="container">
-            <h1 class="display-3 mb-3 animated slideInDown">Welcome ${currentUser.farmName} <br>To Your Farm </h1><br>
-           	<h3>All Products</h3>
-           	  <c:forEach var="products" items="${product}">
-		       <div class="row g-4">
-                       
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/product-1.jpg" alt="">
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="/product/${products.id}">${products.productName }</a>
-                                    <span class="text-primary me-1"> ${products.productPrice}$/Kilo</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href="/edit/${products.id}/update"><i class="fa fa-pen text-primary me-2"></i>Edit</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href="/delete/${products.id}"><i class="far fa-times-circle text-primary me-2"></i>Delete</a>
-                                    </small>
+         <h1 class="fw-bold text-primary m-0">Edit product</h1>
+         <br><br>
+          <form:form action="/edit/${selectedProduct.id}" method="post" modelAttribute="selectedProduct">
+          <input type="hidden" name="_method" value="put">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <form:input type="text" class="form-control" path="productName" id="name" placeholder="Farm Name"/>
+                                    <form:label for="name" path="productName">Product Name</form:label>
+                                    <form:errors path="productName" style="color:red;" />
                                 </div>
                             </div>
-                        </div>
-                        </div>
-		      </c:forEach>
+                            <br>
+                              <div class="col-md-6">
+                                <div class="form-floating">
+                                    <form:input type="number" path="productPrice" class="form-control" id="name" placeholder="Your Phone Number"/>
+                                    <form:label for="name" path="productPrice" >Product Price</form:label>
+                                    <form:errors path="productPrice" style="color:red;" />
+                                </div>
+                            </div>
+                            <br>
+                          
+                             <div class="col-md-6">
+                                <div class="form-floating">
+                                    <form:input type="text" path="productFact" class="form-control" id="name" placeholder="Your Password"/>
+                                    <form:label for="name" path="productFact">Product Fact</form:label>
+                                    <form:errors path="productFact" style="color:red;" />
+                                </div>
+                            </div>
+                            <br>
+                             <div class="col-md-6">
+                                <div class="form-floating">
+                                    <form:input type="number" path="productAvailbilty" class="form-control" id="name" placeholder="Your Password"/>
+                                    <form:label for="name" path="productAvailbilty">Product Availbilty</form:label>
+                                    <form:errors path="productAvailbilty" style="color:red;" />
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+		                           <form:select path="categoryType"  class="form-control" id="inputEmail3">
+									      <c:forEach var="category" items="${allCategories}">
+									  		<form:option value="${category.id}">
+									  		<c:out value="${category.categoryTitle}" />
+									  		</form:option>
+		  	
+											 </c:forEach>
+									</form:select>
+									 </div>
+                           	 </div>
+                              <div class="col-12">
+                                <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Edit Product</button>
+                            </div>
+            </form:form>
         </div>
     </div>
+       
     <!-- Page Header End -->
+
+ 
+                
+
+
+ 
 
 
    
-        
- <!-- Footer Start -->
+    <!-- Footer Start -->
     <div class="container-fluid bg-dark footer pt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
@@ -148,7 +184,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="#">Bio Palestine</a>, All Right Reserved.
+                        &copy; <a href="/">Bio Palestine</a>, All Right Reserved.
                     </div>
                     
                 </div>
@@ -157,8 +193,6 @@
     </div>
     <!-- Footer End -->
 
-
-  
 
 
     <!-- JavaScript Libraries -->

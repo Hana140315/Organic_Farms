@@ -48,6 +48,10 @@ public class Product {
 	    private Category categoryType;
 	    
 	    
+	    @ManyToOne(fetch = FetchType.LAZY)
+	 	@JoinColumn(name="productIncluded")
+	 	private Farm farm;
+	    
 	    @Column(updatable=false)
 	    @DateTimeFormat(pattern="yyyy-MM-dd")
 	    private Date createdAt;
@@ -77,6 +81,16 @@ public class Product {
 
 		public void setProductName(String productName) {
 			this.productName = productName;
+		}
+
+
+		public Farm getFarm() {
+			return farm;
+		}
+
+
+		public void setFarm(Farm farm) {
+			this.farm = farm;
 		}
 
 

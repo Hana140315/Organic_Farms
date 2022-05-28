@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.example.demo.models.Category;
 import com.example.demo.models.Farm;
@@ -98,6 +99,14 @@ public class Controller {
 		 proServce.deleteProduct(id);
 	        return "redirect:/home";
 	    }
-	
+		@GetMapping("/edit/{id}/update")
+	    public String edit(@PathVariable("id") Long id,Model model) {
+			Product thisproduct = proServce.findbyId(id);
+	        model.addAttribute("selectedProduct", thisproduct);
+	        List<Category> categories = catServce.allCategories();
+			model.addAttribute("allCategories",categories);
+	        return "edit.jsp";
+	    }
+		 
 	
 }

@@ -69,8 +69,24 @@ public class Farm {
     @OneToMany(mappedBy="farmItself", fetch = FetchType.LAZY)
     private List<Category> categoriesIncluded;
     
+    @OneToMany(mappedBy="farm", fetch = FetchType.LAZY)
+    private List<Product> productIncluded;
     
-    public String getFarmLocation() {
+    
+    public Farm() {
+    	
+	}
+    
+    
+    public List<Product> getProductIncluded() {
+		return productIncluded;
+	}
+
+	public void setProductIncluded(List<Product> productIncluded) {
+		this.productIncluded = productIncluded;
+	}
+
+	public String getFarmLocation() {
 		return farmLocation;
 	}
 
@@ -86,9 +102,7 @@ public class Farm {
 		this.categoriesIncluded = categoriesIncluded;
 	}
 
-	public Farm() {
 	
-	}
 
 	public Long getId() {
 		return id;
