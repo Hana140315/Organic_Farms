@@ -84,8 +84,24 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
-            <h1 class="display-3 mb-3 animated slideInDown">Welcome ${currentUser.farmName}</h1>
-           
+            <h1 class="display-3 mb-3 animated slideInDown">Welcome ${currentUser.farmName} <br>To Your Farm </h1><br>
+           	<h3>All Products</h3>
+           	  <c:forEach var="products" items="${product}">
+		       <div class="row g-4">
+                       
+                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="product-item">
+                                <div class="position-relative bg-light overflow-hidden">
+                                    <img class="img-fluid w-100" src="img/product-1.jpg" alt="">
+                                </div>
+                                <div class="text-center p-4">
+                                    <a class="d-block h5 mb-2" href="/product/${products.id}">${products.productName }</a>
+                                    <span class="text-primary me-1"> ${products.productPrice}$/Kilo</span>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+		      </c:forEach>
         </div>
     </div>
     <!-- Page Header End -->

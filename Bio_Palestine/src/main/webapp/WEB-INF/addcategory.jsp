@@ -76,7 +76,7 @@
             
         </div>
     </nav>
-</div>
+
 <!-- Navbar End -->
 
 
@@ -162,6 +162,8 @@
             </div>
         </div>
     </div>
+    </div>
+    
     <!-- Footer End -->
 
 
