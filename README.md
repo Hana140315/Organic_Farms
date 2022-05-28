@@ -64,6 +64,9 @@ The project will provide the following functions:
 9.	Search on level of categories
 10.	Search on level of location
 
-## 7-	Bio Palestine database 
+## 7-	Bio Palestine database :
 
 ![ERD Diagram](https://github.com/Hana140315/Organic_Farms/blob/master/DB/ERD2.PNG)
+
+## Bio Palestine prototype:
+![Wirefame](https://github.com/Hana140315/Organic_Farms/blob/master/DB/ERD2.PNG)
