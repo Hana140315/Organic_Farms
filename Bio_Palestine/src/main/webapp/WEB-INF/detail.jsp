@@ -92,7 +92,7 @@
               <p>Fact of Product: ${thisProduct.productFact}</p>
             <p>available: ${thisProduct.productAvailbilty}</p>
             <h4>Contact Information:</h4>
-            <p>Responsible Person: ${thisProduct.farm.farmName}</p>
+            <p>Farm: ${thisProduct.farm.farmName}</p>
             <p>Mobile Number: ${thisProduct.farm.farmPhone}</p>
             <p>Address: ${thisProduct.farm.farmAddress}, ${thisProduct.farm.farmLocation}</p>
             <p>Email: ${thisProduct.farm.email}</p>

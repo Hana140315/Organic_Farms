@@ -66,11 +66,10 @@ public class Farm {
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
     
-    @OneToMany(mappedBy="farmItself", fetch = FetchType.LAZY)
-    private List<Category> categoriesIncluded;
+   
     
     @OneToMany(mappedBy="farm", fetch = FetchType.LAZY)
-    private List<Product> productIncluded;
+    private List<Product> productsIncluded;
     
     
     public Farm() {
@@ -78,13 +77,21 @@ public class Farm {
 	}
     
     
-    public List<Product> getProductIncluded() {
-		return productIncluded;
+ 
+
+	public List<Product> getProductsIncluded() {
+		return productsIncluded;
 	}
 
-	public void setProductIncluded(List<Product> productIncluded) {
-		this.productIncluded = productIncluded;
+
+
+
+	public void setProductsIncluded(List<Product> productsIncluded) {
+		this.productsIncluded = productsIncluded;
 	}
+
+
+
 
 	public String getFarmLocation() {
 		return farmLocation;
@@ -94,13 +101,6 @@ public class Farm {
 		this.farmLocation = farmLocation;
 	}
 
-	public List<Category> getCategoriesIncluded() {
-		return categoriesIncluded;
-	}
-
-	public void setCategoriesIncluded(List<Category> categoriesIncluded) {
-		this.categoriesIncluded = categoriesIncluded;
-	}
 
 	
 
@@ -186,11 +186,11 @@ public class Farm {
 		this.confirm = confirm;
 	}
 
-	public void addcategoryToFarm(Category category) {
-		if(this.categoriesIncluded==null) {
-			this.categoriesIncluded=new ArrayList<Category>();
+	public void addproductToFarm(Product product) {
+		if(this.productsIncluded==null) {
+			this.productsIncluded=new ArrayList<Product>();
 		}
-		this.categoriesIncluded.add(category);
+		this.productsIncluded.add(product);
 	}
 
 

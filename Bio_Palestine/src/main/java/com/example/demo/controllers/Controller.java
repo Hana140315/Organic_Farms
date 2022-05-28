@@ -61,19 +61,23 @@ public class Controller {
 	}
 	
 	@GetMapping("/product")
-	public String product() {
+	public String product(Model model) {
+		List<Product> products = proServce.allProducts();
+		model.addAttribute("product",products);
 		return "product.jsp";
 	}
 	
 	@GetMapping("/home")
 	public String home(Model model,HttpSession session) {
 		if(session.getAttribute("userId")!=null) {
-			List<Product> products = proServce.allProducts();
+			Long userId=(Long)session.getAttribute("userId");
+			Farm currenUser=farmServ.findbyId(userId);
+			List<Product> products = proServce.allProductforFarm(currenUser);
 			List<Category> categories = catServce.allCategories();
 			model.addAttribute("product",products);
 			model.addAttribute("category",categories);
-    		Long userId=(Long)session.getAttribute("userId");
-    		Farm currenUser=farmServ.findbyId(userId);
+    		
+    		
     		model.addAttribute("currentUser", currenUser);
     		return "home.jsp";
     	}

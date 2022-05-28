@@ -33,32 +33,35 @@ public class ProductCategoryController {
 	}
 	
 	@PostMapping("/product/new")
-	public String createproduct(@Valid @ModelAttribute("product") Product product,BindingResult result) {
+	public String createproduct(@Valid @ModelAttribute("product") Product product,BindingResult result,HttpSession session) {
 		 if (result.hasErrors()) {
 	            return "addproduct.jsp";
 	        } else {
-	        	proServce.addProduct(product);
-	    return "redirect:/home";
+	        	if(session.getAttribute("userId")!=null) {
+		        	Long farmId=(Long)session.getAttribute("userId");
+		    		Farm currenFarm=farmServ.findbyId(farmId);
+		    		currenFarm.addproductToFarm(product);
+		    		farmServ.update(currenFarm);
+		    		product.setFarm(currenFarm);
+		    		proServce.addProduct(product);
+	        	}
+	        	return "redirect:/home";
 	        }
 	}
 	
 
 	
 	@PostMapping("/category/new")
-	public String createcategory(@Valid @ModelAttribute("category") Category category,BindingResult result,HttpSession session) {
+	public String createcategory(@Valid @ModelAttribute("category") Category category,BindingResult result) {
 		 if (result.hasErrors()) {
 	            return "addcategory.jsp";
-	        } else {
-	        	if(session.getAttribute("userId")!=null) {
-	        	Long farmId=(Long)session.getAttribute("userId");
-	    		Farm currenFarm=farmServ.findbyId(farmId);
-	    		currenFarm.addcategoryToFarm(category);
-	    		farmServ.update(currenFarm);
+	        } else 
+	        {
 	        	catServce.addCategory(category);
-	        	}
 	    return "redirect:/home";
 	        }
 	}
+	
 	@PutMapping("/edit/{id}")
     public String update(@Valid @ModelAttribute("product") Product product ,HttpSession session, BindingResult result) {
         if (result.hasErrors()) {

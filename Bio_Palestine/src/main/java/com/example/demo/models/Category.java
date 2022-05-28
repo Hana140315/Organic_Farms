@@ -36,9 +36,7 @@ public class Category {
 	 	@Size(min=5,max=50,message = "Must be at least five charactar")
 	 	private String categoryDescription;
 	 	
-	 	@ManyToOne(fetch = FetchType.LAZY)
-	 	@JoinColumn(name="categoriesIncluded")
-	 	private Farm farmItself;
+	 
 	 	
 	 	@OneToMany(mappedBy="categoryType", fetch=FetchType.LAZY)
 	 	private List<Product> products;
@@ -77,14 +75,7 @@ public class Category {
 			this.categoryDescription = categoryDescription;
 		}
 	 	
-		public Farm getFarmItself() {
-			return farmItself;
-		}
-
-		public void setFarmItself(Farm farmItself) {
-			this.farmItself = farmItself;
-		}
-
+		
 		public List<Product> getProducts() {
 			return products;
 		}

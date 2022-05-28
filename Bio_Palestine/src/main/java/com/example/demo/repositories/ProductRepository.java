@@ -7,6 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.models.Category;
+import com.example.demo.models.Farm;
 import com.example.demo.models.Product;
 
 @Repository
@@ -20,6 +21,8 @@ public interface ProductRepository extends CrudRepository<Product, Long>{
 	
 	//retrieve a list of products not included in a particular category
 	List<Product> findByCategoryTypeNotContains(Category category);
+	
+	List<Product> findAllByFarm(Farm farm);
 	
 	Optional<Product> findById(Long id);
 	

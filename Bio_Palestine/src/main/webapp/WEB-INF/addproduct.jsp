@@ -117,7 +117,7 @@
                             <br>
                              <div class="col-md-6">
                                 <div class="form-floating">
-                                    <form:input type="number" path="productAvailbilty" class="form-control" id="name" placeholder="Your Password"/>
+                                    <form:input type="text" path="productAvailbilty" class="form-control" id="name" placeholder="Your Password"/>
                                     <form:label for="name" path="productAvailbilty">Product Availbilty</form:label>
                                     <form:errors path="productAvailbilty" style="color:red;" />
                                 </div>

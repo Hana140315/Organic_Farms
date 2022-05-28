@@ -20,9 +20,7 @@ public class CategoryService {
         return categoryrepo.findAll();
     }
 	
-	public List<Category> findbyproducts(Farm farm){
-		return categoryrepo.findAllByFarmItself(farm);
-	}
+	
 	
 	public Category addCategory(Category c) {
         return categoryrepo.save(c);
@@ -32,9 +30,6 @@ public class CategoryService {
 		return categoryrepo.findById(id).get();
 	}
 	
-	public List<Category> findbyProductsNotContan(Farm farm){
-		return categoryrepo.findByFarmItselfNotContains(farm);
-	}
 	
 	public void addProductsToCategory(Category this_category,Product selcted_product) {
 		this_category.getProducts().add(selcted_product);

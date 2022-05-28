@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.models.Category;
+import com.example.demo.models.Farm;
 import com.example.demo.models.Product;
 import com.example.demo.repositories.ProductRepository;
 
@@ -20,6 +21,10 @@ public class ProductService {
 	
 	public List<Product> allProducts(){
 		return productrepo.findAll();
+	}
+	
+	public List<Product> allProductforFarm(Farm farm){
+		return productrepo.findAllByFarm(farm);
 	}
 	
 	public Product addProduct(Product p) {

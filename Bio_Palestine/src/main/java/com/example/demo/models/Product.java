@@ -40,8 +40,8 @@ public class Product {
 	    private String productFact;
 	    
 	    @NotNull(message="Must be not null")
-	    @Min(value=3)
-	    private Integer productAvailbilty;
+	    @Size(min=3,message="Must be at least three character")
+	    private String productAvailbilty;
 	    
 	    @ManyToOne(fetch=FetchType.LAZY)
 	    @JoinColumn(name="category")
@@ -49,7 +49,7 @@ public class Product {
 	    
 	    
 	    @ManyToOne(fetch = FetchType.LAZY)
-	 	@JoinColumn(name="productIncluded")
+	 	@JoinColumn(name="farm_id")
 	 	private Farm farm;
 	    
 	    @Column(updatable=false)
@@ -120,18 +120,20 @@ public class Product {
 //	    @Column(name="product_picture")
 //	    ByteArray productPicture;
 	    
-		public Integer getProductAvailbilty() {
+		
+
+		public Category getCategoryType() {
+			return categoryType;
+		}
+
+
+		public String getProductAvailbilty() {
 			return productAvailbilty;
 		}
 
 
-		public void setProductAvailbilty(Integer productAvailbilty) {
+		public void setProductAvailbilty(String productAvailbilty) {
 			this.productAvailbilty = productAvailbilty;
-		}
-
-
-		public Category getCategoryType() {
-			return categoryType;
 		}
 
 
