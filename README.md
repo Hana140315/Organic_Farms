@@ -16,7 +16,7 @@ In Palestine we used to have green lifestyle to the time the international free 
 ## 2-	Project Scope:
 Bio Palestine will be responsible in gathering data about all farms, shops, and individuals following Bio “Baladi” in their daily practices and growing, and distributing their products, this mean that the visitor of our website could find a list of farms, shops and individuals, the distribution among Palestine, also the products they produce and sell, in addition to some facts about the products and price of each.
 
-##3-	Project team:
+## 3-	Project team:
 
 *	Majed Amria
 *	Fadi Abu Aita
