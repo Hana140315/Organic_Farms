@@ -66,4 +66,4 @@ The project will provide the following functions:
 
 ## 7-	Bio Palestine database 
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![ERD Diagram](https://github.com/Hana140315/Organic_Farms/blob/master/DB/ERD2.PNG)
