@@ -53,10 +53,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	                .usernameParameter("email")
 	                .defaultSuccessUrl("/home")
 	                .permitAll()
+	                
 	                .and()
-	            .logout()
-	            .logoutSuccessUrl("/logout")
+	                .logout()
+	                .logoutSuccessUrl("/logout")
 	                .permitAll();
+	        
+	            
 	    }
 	    // 1
 	    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {

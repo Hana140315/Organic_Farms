@@ -1,5 +1,7 @@
 package com.example.demo.controllers;
 
+import java.security.Principal;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import javax.websocket.Session;
@@ -33,18 +35,21 @@ public class ProductCategoryController {
 	}
 	
 	@PostMapping("/product/new")
-	public String createproduct(@Valid @ModelAttribute("product") Product product,BindingResult result,HttpSession session) {
+	public String createproduct(@Valid @ModelAttribute("product") Product product,Principal principal,BindingResult result,HttpSession session) {
 		 if (result.hasErrors()) {
 	            return "addproduct.jsp";
 	        } else {
-	        	if(session.getAttribute("userId")!=null) {
-		        	Long farmId=(Long)session.getAttribute("userId");
-		    		Farm currenFarm=farmServ.findbyId(farmId);
-		    		currenFarm.addproductToFarm(product);
-		    		farmServ.update(currenFarm);
-		    		product.setFarm(currenFarm);
+	        	
+//		        	Long farmId=(Long)session.getAttribute("userId");
+//		    		Farm currenFarm=farmServ.findbyId(farmId);
+//		    		currenFarm.addproductToFarm(product);
+	        		String username = principal.getName();
+	        	    session.setAttribute("currenUser", farmServ.findByEmail(username));
+//	        	    System.out.println(farmServ.findByEmail(username).getId());
+		    		farmServ.update(farmServ.findByEmail(username));
+		    		product.setFarm(farmServ.findByEmail(username));
 		    		proServce.addProduct(product);
-	        	}
+	        	
 	        	return "redirect:/home";
 	        }
 	}

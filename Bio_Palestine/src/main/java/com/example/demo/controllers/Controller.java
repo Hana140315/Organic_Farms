@@ -1,5 +1,6 @@
 package com.example.demo.controllers;
 
+import java.security.Principal;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.models.Category;
 import com.example.demo.models.Farm;
@@ -84,21 +86,21 @@ public class Controller {
 //
 //    	return "redirect:/";
 //	}
-	@GetMapping("/product/new")
-	public String newproduct(Model model,@ModelAttribute("product") Product product,HttpSession session) {
+	@RequestMapping("/product/new")
+	public String newproduct(Model model,Principal principal,@ModelAttribute("product") Product product,HttpSession session) {
 		List<Category> categories = catServce.allCategories();
 		model.addAttribute("allCategories",categories);
-		Long userId=(Long)session.getAttribute("userId");
-		Farm currenUser=farmServ.findbyId(userId);
-		model.addAttribute("currentUser", currenUser);
+		
+		 String username = principal.getName();
+	      session.setAttribute("currenUser", farmServ.findByEmail(username));
 		return "addproduct.jsp";
 	}
 	
 	@GetMapping("/category/new")
-	public String newcategory(Model model,@ModelAttribute("category") Category category,HttpSession session) {
-		Long userId=(Long)session.getAttribute("userId");
-		Farm currenUser=farmServ.findbyId(userId);
-		model.addAttribute("currentUser", currenUser);
+	public String newcategory(Principal principal,@ModelAttribute("category") Category category,HttpSession session) {
+		 String username = principal.getName();
+	      session.setAttribute("currenUser", farmServ.findByEmail(username));
+		
 		return "addcategory.jsp";
 	}
 	

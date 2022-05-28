@@ -84,7 +84,7 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
-            <h1 class="display-3 mb-3 animated slideInDown">Welcome ${currentUser.farmName} <br>To Your Farm </h1><br>
+            <h1 class="display-3 mb-3 animated slideInDown">Welcome ${currenUser.farmName} <br>To Your Farm </h1><br>
            	<h3>All Products</h3>
            	  <c:forEach var="products" items="${product}">
 		       <div class="row g-4">

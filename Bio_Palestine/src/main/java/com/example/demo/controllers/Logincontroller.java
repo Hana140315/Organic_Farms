@@ -21,15 +21,15 @@
 //	@Autowired
 //	 private FarmService farmServ;
 //	
-//	
-//
+	
+
 //	@GetMapping("/login")
 //	public String login(Model model) {
 //		  model.addAttribute("newLogin", new LoginUser());
 //		return "login.jsp";
 //	}
-//	
-//	
+	
+	
 //	@GetMapping("/register")
 //	public String register(Model model) {
 //		 model.addAttribute("newUser", new Farm());
@@ -50,7 +50,7 @@
 //	        session.setAttribute("userId", registerUser.getId());
 //	        return "redirect:/home";
 //	    }
-//	    
+	    
 //	    @PostMapping("/login")
 //	    public String login(@Valid @ModelAttribute("newLogin") LoginUser newLogin, 
 //	            BindingResult result, Model model, HttpSession session) {
@@ -62,12 +62,12 @@
 //	            model.addAttribute("newUser", new Farm());
 //	            return "login.jsp";
 //	        }
-//	    
-//	  
+	    
+	  
 //	        session.setAttribute("userId", user.getId());
 //	        return "redirect:/home";
 //	    }
-//	    
+	    
 //	    @GetMapping("/logout")
 //	    public String logout(HttpSession session) {
 //	    	session.invalidate();
