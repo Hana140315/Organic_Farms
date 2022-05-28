@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,8 +34,10 @@ public class UsersController {
     @RequestMapping(value = {"/home"})
     public String home(Principal principal, Model model) {
         // 1
-        String username = principal.getName();
-        model.addAttribute("currentUser", farmService.findByUsername(username));
+       String username = principal.getName();
+       
+        model.addAttribute("currentUser", farmService.findByEmail(username));
+        System.out.println(farmService.findByEmail(username));
         return "home.jsp";
     }
     
@@ -67,15 +70,16 @@ public class UsersController {
         return "redirect:/login";
     }
     
-    @RequestMapping("/admin")
-    public String adminPage(Principal principal, Model model) {
-        String username = principal.getName();
-        model.addAttribute("currentUser", farmService.findByUsername(username));
-        return "adminPage.jsp";
-    }
-    
-//    @RequestMapping("/login")
-//    public String login() {
-//        return "loginPage.jsp";
+//    @RequestMapping("/admin")
+//    public String adminPage(Principal principal, Model model) {
+//        String username = principal.getName();
+//        model.addAttribute("currentUser", farmService.findByUsername(username));
+//        return "adminPage.jsp";
 //    }
+    
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+    	session.invalidate();
+    	return "redirect:/";
+    }
 }

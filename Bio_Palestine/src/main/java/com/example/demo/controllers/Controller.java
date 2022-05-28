@@ -67,23 +67,23 @@ public class Controller {
 		return "product.jsp";
 	}
 	
-	@GetMapping("/home")
-	public String home(Model model,HttpSession session) {
-		if(session.getAttribute("userId")!=null) {
-			Long userId=(Long)session.getAttribute("userId");
-			Farm currenUser=farmServ.findbyId(userId);
-			List<Product> products = proServce.allProductforFarm(currenUser);
-			List<Category> categories = catServce.allCategories();
-			model.addAttribute("product",products);
-			model.addAttribute("category",categories);
-    		
-    		
-    		model.addAttribute("currentUser", currenUser);
-    		return "home.jsp";
-    	}
-
-    	return "redirect:/";
-	}
+//	@GetMapping("/home")
+//	public String home(Model model,HttpSession session) {
+//		if(session.getAttribute("userId")!=null) {
+//			Long userId=(Long)session.getAttribute("userId");
+//			Farm currenUser=farmServ.findbyId(userId);
+//			List<Product> products = proServce.allProductforFarm(currenUser);
+//			List<Category> categories = catServce.allCategories();
+//			model.addAttribute("product",products);
+//			model.addAttribute("category",categories);
+//    		
+//    		
+//    		model.addAttribute("currentUser", currenUser);
+//    		return "home.jsp";
+//    	}
+//
+//    	return "redirect:/";
+//	}
 	@GetMapping("/product/new")
 	public String newproduct(Model model,@ModelAttribute("product") Product product,HttpSession session) {
 		List<Category> categories = catServce.allCategories();

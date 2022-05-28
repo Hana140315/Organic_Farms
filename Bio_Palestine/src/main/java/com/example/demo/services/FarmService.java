@@ -48,8 +48,8 @@ public class FarmService {
     }    
     
     // 3
-    public Farm findByUsername(String username) {
-        return farmRepo.findByfarmName(username);
+    public Farm findByEmail(String username) {
+        return farmRepo.findByEmail(username);
     }
 	    // TO-DO: Write register and login methods!
 //	    public Farm register(Farm newUser, BindingResult result) {

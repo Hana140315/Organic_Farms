@@ -20,6 +20,6 @@ public interface FarmRepository extends CrudRepository<Farm, Long> {
 	    
 	Optional<Farm> findById(Long id);
 	
-	Farm findByfarmName(String username);
+	Farm findByFarmName(String username);
 	
 }
