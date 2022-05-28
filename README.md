@@ -5,4 +5,11 @@ In Palestine we used to have green lifestyle to the time the international free 
  For that many farms are following the Bio” Baladi” in producing their products 
  We could consider our project as an idea that would help society live in a more sustainable way and classified as “going green” a reality. The impact of implementing our project will enhance the following:
 
+1.	Reducing carbon emissions
+2.	Helping protect endangered species
+3.	Reducing pollution or helping clean local neighborhoods or cities
+4.	Ensuring everyone has access to healthy food to eat
+5.	Preventing deforestation or driving reforestation
+6.	Improving waste disposal
+7.	Improving the recycling process or recycling adoption
 
