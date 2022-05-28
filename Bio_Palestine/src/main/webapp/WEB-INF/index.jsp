@@ -202,8 +202,8 @@
             </div>
             <div class="tab-content">
                 <div id="tab-1" class="tab-pane fade show p-0 active">
-                    <!--begin for loop-->
-                    <div class="row g-4">
+                    <c:forEach var="products" items="${product}">
+		       <div class="row g-4">
                        
                         <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="product-item">
@@ -211,17 +211,14 @@
                                     <img class="img-fluid w-100" src="img/product-1.jpg" alt="">
                                 </div>
                                 <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Fresh Tomato</a>
-                                    <span class="text-primary me-1">$19.00/Kilo</span>
+                                    <a class="d-block h5 mb-2 " href="/detail/${products.id}"><i class="fa fa-eye text-primary me-2"></i>${products.productName }</a>
+                                    <span class="text-primary me-1"> ${products.productPrice}$/Kilo</span>
                                 </div>
+                               
                             </div>
                         </div>
-                 
-                    
-                       
-                      
-                    </div>
-                    <!--end foor loop-->
+                        </div>
+		      </c:forEach>
                 </div>
             </div>
         </div>

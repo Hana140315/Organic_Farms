@@ -42,7 +42,11 @@ public class Controller {
 	}
 
 	@GetMapping("/")
-	public String index() {
+	public String index(Model model) {
+		List<Product> products = proServce.allProducts();
+		List<Category> categories = catServce.allCategories();
+		model.addAttribute("product",products);
+		model.addAttribute("category",categories);
 		return "index.jsp";
 	}
 	
@@ -108,5 +112,10 @@ public class Controller {
 	        return "edit.jsp";
 	    }
 		 
-	
+		@GetMapping("/detail/{id}")
+		public String detail(Model model,@PathVariable("id") Long id,@ModelAttribute("product") Product product) {
+			Product currProduct=proServce.findbyId(id);
+			model.addAttribute("thisProduct",currProduct);
+			return "detail.jsp";
+		}
 }
