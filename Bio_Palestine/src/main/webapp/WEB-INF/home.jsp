@@ -98,6 +98,14 @@
                                     <a class="d-block h5 mb-2" href="/product/${products.id}">${products.productName }</a>
                                     <span class="text-primary me-1"> ${products.productPrice}$/Kilo</span>
                                 </div>
+                                <div class="d-flex border-top">
+                                    <small class="w-50 text-center border-end py-2">
+                                        <a class="text-body" href=""><i class="fa fa-pen text-primary me-2"></i>Edit</a>
+                                    </small>
+                                    <small class="w-50 text-center py-2">
+                                        <a class="text-body" href=""><i class="far fa-times-circle text-primary me-2"></i>Delete</a>
+                                    </small>
+                                </div>
                             </div>
                         </div>
                         </div>
