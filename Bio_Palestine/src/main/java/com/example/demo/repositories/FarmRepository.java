@@ -9,14 +9,17 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.models.Farm;
 
+
 @Repository
 public interface FarmRepository extends CrudRepository<Farm, Long> {
 	
 	//retrieve all farms
 	List<Farm> findAll();
 	
-	Optional<Farm> findByEmail(String email);
+	Farm findByEmail(String email);
 	    
 	Optional<Farm> findById(Long id);
+	
+	Farm findByfarmName(String username);
 	
 }

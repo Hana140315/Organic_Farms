@@ -86,12 +86,14 @@
         <div class="container">
          <h1 class="fw-bold text-primary m-0">Register Your Farm</h1>
          <br><br>
+       
           <form:form action="/register" method="post" modelAttribute="newUser">
+         
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <form:input type="text" class="form-control" path="farmName" id="name" placeholder="Farm Name"/>
                                     <form:label for="name" path="farmName">Farm Name</form:label>
-                                    <form:errors path="farmName" style="color:red;" />
+                                   <form:errors path="farmName" style="color:red;" />
                                 </div>
                             </div>
                             <br>
@@ -99,6 +101,8 @@
                                 <div class="form-floating">
                                     <form:input type="number" path="farmPhone" class="form-control" id="name" placeholder="Your Phone Number"/>
                                     <form:label for="name" path="farmPhone" >Phone Number</form:label>
+                                    
+                                    
                                     <form:errors path="farmPhone" style="color:red;" />
                                 </div>
                             </div>
@@ -116,7 +120,7 @@
                                 <div class="form-floating">
                                     <form:input type="text" path="farmLocation" class="form-control" id="name" placeholder="Your Password"/>
                                     <form:label for="name" path="farmLocation">Location</form:label>
-                                    <form:errors path="farmAddress" style="color:red;" />
+                                  <form:errors path="farmAddress" style="color:red;" /> 
                                 </div>
                             </div>
                             <br>
@@ -124,7 +128,7 @@
                                 <div class="form-floating">
                                     <form:input type="email" path="email" class="form-control" id="email" placeholder="Your Email"/>
                                     <form:label for="email" path="email">Your Email</form:label>
-                                    <form:errors path="email" style="color:red;" />
+                               <form:errors path="email" style="color:red;" />
                                 </div>
                             </div>
                             <br>
@@ -132,7 +136,7 @@
                                 <div class="form-floating">
                                     <form:input type="password" path="password" class="form-control" id="name" placeholder="Your Password"/>
                                     <form:label for="name" path="password">Password</form:label>
-                                     <form:errors path="password" style="color:red;" />
+                                  <form:errors path="password" style="color:red;" />
                                      
                                 </div>
                             </div>
@@ -141,7 +145,7 @@
                                 <div class="form-floating">
                                     <form:input type="password" path="confirm" class="form-control" id="email" placeholder="Confirm Password"/>
                                     <form:label for="confirm" path="confirm">Confirm Password</form:label>
-                                     <form:errors path="confirm" style="color:red;" />
+                                    <form:errors path="confirm" style="color:red;" />
                                 </div>
                             </div>
                             <br>
