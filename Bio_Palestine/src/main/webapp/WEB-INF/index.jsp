@@ -67,10 +67,10 @@
                 
                 <a href="/" class="nav-item nav-link">Home</a>
                 <a href="/product" class="nav-item nav-link">Products</a>
-                <a href="/login" class="nav-item nav-link"><span class="text-secondary">Login</span></a>
-                <a href="/register" class="nav-item nav-link"><span class="fw-bold text-primary m-0">Register</span></a>
                 <a href="/about" class="nav-item nav-link">About Us</a>
                 <a href="/contactUs" class="nav-item nav-link">Contact Us</a>
+                <a href="/login" class="nav-item nav-link"><span class="fw-bold text-secondary">Login</span></a>
+                <a href="/register" class="nav-item nav-link"><span class="fw-bold text-primary m-0">Register</span></a>
             </div>
             
         </div>
@@ -93,7 +93,8 @@
                                 <div class="col-lg-7">
                                     <h1 class="display-2 mb-5 animated slideInDown">Organic Food Is Good For Health</h1>
                                     <a href="/product" class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Products</a>
-                                    <a href="" class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Sources</a>
+                                    <a href="https://api.spoonacular.com/food/ingredients/search" class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Sources</a>
+                                  
                                 </div>
                             </div>
                         </div>
@@ -107,7 +108,9 @@
                                 <div class="col-lg-7">
                                     <h1 class="display-2 mb-5 animated slideInDown">Natural Food Is Always Healthy</h1>
                                     <a href="/product" class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Products</a>
-                                    <a href="" class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Sources</a>
+                                    <a href="https://api.spoonacular.com/food/ingredients/search" class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Sources</a>
+                                   
+				                    
                                 </div>
                             </div>
                         </div>

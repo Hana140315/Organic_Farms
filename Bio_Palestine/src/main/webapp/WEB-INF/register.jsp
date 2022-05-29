@@ -29,7 +29,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Lora:wght@600;700&display=swap" rel="stylesheet"> 
-
+    
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -68,10 +68,10 @@
                 
                <a href="/" class="nav-item nav-link">Home</a>
                 <a href="/product" class="nav-item nav-link">Products</a>
-                <a href="/login" class="nav-item nav-link"><span class="text-secondary">Login</span></a>
-                <a href="/register" class="nav-item nav-link"><span class="fw-bold text-primary m-0">Regester</span></a>
                 <a href="/about" class="nav-item nav-link">About Us</a>
                 <a href="/contactUs" class="nav-item nav-link">Contact Us</a>
+                <a href="/login" class="nav-item nav-link"><span class="fw-bold text-secondary">Login</span></a>
+                <a href="/register" class="nav-item nav-link"><span class="fw-bold text-primary m-0">Register</span></a>
             </div>
             
         </div>
@@ -159,11 +159,12 @@
     <!-- Page Header End -->
 
  
-                
-
+               
 
  
-
+<div class="embed-responsive embed-responsive-21by9">
+		<iframe src="https://www.google.com/maps/embed?pb=place/Ramallah/@31.9028455,35.1982262,14z/data=!4m5!3m4!1s0x1502d54cda2d58d1:0xbf6d4d17cc8b2c76!8m2!3d31.9037654!4d35.2034193?hl=en-US" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" class="embed-responsive-item"></iframe>
+	</div>
 
    
     <!-- Footer Start -->

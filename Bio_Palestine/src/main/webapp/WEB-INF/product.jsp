@@ -67,10 +67,10 @@
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                    <a href="/" class="nav-item nav-link">Home</a>
                 <a href="/product" class="nav-item nav-link">Products</a>
-                <a href="/login" class="nav-item nav-link"><span class="text-secondary">Login</span></a>
-                <a href="/register" class="nav-item nav-link"><span class="fw-bold text-primary m-0">Register</span></a>
                 <a href="/about" class="nav-item nav-link">About Us</a>
                 <a href="/contactUs" class="nav-item nav-link">Contact Us</a>
+                <a href="/login" class="nav-item nav-link"><span class="fw-bold text-secondary">Login</span></a>
+                <a href="/register" class="nav-item nav-link"><span class="fw-bold text-primary m-0">Register</span></a>
                 </div>
                 
             </div>

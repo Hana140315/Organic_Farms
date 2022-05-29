@@ -13,6 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -42,6 +43,9 @@ public class Product {
 	    @NotNull(message="Must be not null")
 	    @Size(min=3,message="Must be at least three character")
 	    private String productAvailbilty;
+	    
+	    @Column(nullable = true, length = 64)
+	    private String photos;
 	    
 	    @ManyToOne(fetch=FetchType.LAZY)
 	    @JoinColumn(name="category")
@@ -87,8 +91,25 @@ public class Product {
 		public Farm getFarm() {
 			return farm;
 		}
+		
+		
+
+		public String getPhotos() {
+			return photos;
+		}
 
 
+		public void setPhotos(String photos) {
+			this.photos = photos;
+		}
+
+		@Transient
+		 public String getPhotosImagePath() {
+		   if (photos == null || id == null) return null;
+		         
+		   return "/user-photos/" + id + "/" + photos;
+		   }
+		
 		public void setFarm(Farm farm) {
 			this.farm = farm;
 		}

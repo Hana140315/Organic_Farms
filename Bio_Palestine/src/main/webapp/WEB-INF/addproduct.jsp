@@ -81,7 +81,8 @@
         </nav>
     
     <!-- Navbar End -->
-                           
+              
+             
 
     <!-- Page Header Start -->
     <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
@@ -89,7 +90,7 @@
         <div class="container">
          <h1 class="fw-bold text-primary m-0">Add product</h1>
          <br><br>
-          <form:form action="/product/new" method="post" modelAttribute="product">
+          <form:form action="/product/new" method="post" modelAttribute="product" enctype="multipart/form-data">
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <form:input type="text" class="form-control" path="productName" id="name" placeholder="Farm Name"/>
@@ -98,6 +99,15 @@
                                 </div>
                             </div>
                             <br>
+                              <div class="col-md-6">
+                                <div class="form-floating">
+                                    <form:input type="file" class="form-control" path="photos" id="name" placeholder="Farm Name" accept="image/png, image/jpeg" />
+                                    <form:label for="name" path="productName">Photos:</form:label>
+                                  
+                       
+                                </div>
+                            </div>
+                             <br>
                               <div class="col-md-6">
                                 <div class="form-floating">
                                     <form:input type="number" path="productPrice" class="form-control" id="name" placeholder="Your Phone Number"/>
@@ -135,6 +145,7 @@
 									</form:select>
 									 </div>
                            	 </div>
+                           	 <br>
                               <div class="col-12">
                                 <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Add Product</button>
                             </div>
