@@ -68,5 +68,26 @@ The project will provide the following functions:
 
 ![ERD Diagram](https://github.com/Hana140315/Organic_Farms/blob/master/DB/ERD2.PNG)
 
-## Bio Palestine prototype:
+## 8- Bio Palestine prototype:
 ![Wirefame](https://github.com/Hana140315/Organic_Farms/blob/master/Documentation/Wireframe.pdf)
+
+
+## 9- 9-	Bio Palestine Validations:
+1.	Email is required for creating account, and it could not be empty, and should follow the email format
+2.	Password is required for creating account, and it could not be empty, the minimum accepted password is 3 characters, and the maximum is 128 characters. 
+3.	Password should be confirmed during the creation.
+4.	Product name not allowed to be empty, and the minimum name is 3 characters.
+5.	Product price not allowed to be empty, and the minimum price is 1.
+6.	Product facts not allowed to be empty, and the minimum fact information is 3 characters.
+7.	Product availability not allowed to be empty, and it must select if it seasonal or available the whole year
+8.	Product photo not allowed to be empty.
+9.	Farm name not allowed to be empty, and the minimum name is 3 character and maximum is 10
+10.	Farm address not allowed to be empty, and the minimum address is 5 character and Maximum is 15.
+11.	Farm phone not allowed to be empty, at least it should be 10 digits.
+12.	Farm location not allowed to be empty.
+13.	Farm email not allowed to be empty, and should follow the email format
+14.	Category title not allowed to be empty, and the minimum title is 3 character and Maximum is 15.
+15.	Category Description not allowed to be empty, and the minimum address is 5 character and Maximum is 50.
+
+
+
