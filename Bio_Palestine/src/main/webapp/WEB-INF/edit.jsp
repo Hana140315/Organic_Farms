@@ -89,7 +89,7 @@
         <div class="container">
          <h1 class="fw-bold text-primary m-0">Edit product</h1>
          <br><br>
-          <form:form action="/edit/${selectedProduct.id}" method="post" modelAttribute="selectedProduct">
+          <form:form action="/edit/${selectedProduct.id}" method="post" modelAttribute="selectedProduct" enctype="multipart/form-data">
           <input type="hidden" name="_method" value="put">
                             <div class="col-md-6">
                                 <div class="form-floating">
@@ -99,6 +99,15 @@
                                 </div>
                             </div>
                             <br>
+                            <div class="col-md-6">
+                           	 <div class="form-floating">
+                                    <form:input type="file" class="form-control" path="photo" id="name" placeholder="Farm Name" accept="image/png, image/jpeg" />
+                                    <form:label for="name" path="photo">Photos:</form:label>
+                                   <form:errors path="photo" style="color:red;" />
+                       
+                                </div>
+                            </div>
+                             <br>
                               <div class="col-md-6">
                                 <div class="form-floating">
                                     <form:input type="number" path="productPrice" class="form-control" id="name" placeholder="Your Phone Number"/>

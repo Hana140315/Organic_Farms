@@ -50,9 +50,9 @@
 
 <body>
     <!-- Spinner Start -->
-    <!-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" role="status"></div>
-    </div>-->
+    </div>
     <!-- Spinner End -->
 
 
@@ -71,10 +71,10 @@
                     
                     <a href="/" class="nav-item nav-link">Home</a>
                 <a href="/product" class="nav-item nav-link">Products</a>
-                <a href="/login" class="nav-item nav-link"><span class="text-secondary">Login</span></a>
-                <a href="/register" class="nav-item nav-link"><span class="fw-bold text-primary m-0">Register</span></a>
                 <a href="/about" class="nav-item nav-link">About Us</a>
                 <a href="/contactUs" class="nav-item nav-link">Contact Us</a>
+                <a href="/login" class="nav-item nav-link"><span class="fw-bold text-secondary">Login</span></a>
+                <a href="/register" class="nav-item nav-link"><span class="fw-bold text-primary m-0">Register</span></a>
                 </div>
                 
             </div>
@@ -87,9 +87,10 @@
     <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
             <h1 class="display-3 mb-3 animated slideInDown">About ${thisProduct.productName }</h1>
+           <img alt="" src="${thisProduct.getPhotosImagePath()}"> 
             <h4>Description:</h4>
             <p>${thisProduct.categoryType.categoryDescription }</p>
-              <p>Fact of Product: ${thisProduct.productFact}</p>
+             <p>Fact of Product: ${thisProduct.productFact}</p>
             <p>available: ${thisProduct.productAvailbilty}</p>
             <h4>Contact Information:</h4>
             <p>Farm: ${thisProduct.farm.farmName}</p>

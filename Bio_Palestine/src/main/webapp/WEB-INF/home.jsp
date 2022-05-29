@@ -92,10 +92,10 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="product-item">
                                 <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/product-1.jpg" alt="">
+                                    <img class="img-fluid w-100" src="${products.getPhotosImagePath()}" alt="">
                                 </div>
                                 <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="/product/${products.id}">${products.productName }</a>
+                                    <a class="d-block h5 mb-2" href="/detail/${products.id}">${products.productName }</a>
                                     <span class="text-primary me-1"> ${products.productPrice}$/Kilo</span>
                                 </div>
                                 <div class="d-flex border-top">

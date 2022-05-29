@@ -161,10 +161,6 @@
  
                
 
- 
-<div class="embed-responsive embed-responsive-21by9">
-		<iframe src="https://www.google.com/maps/embed?pb=place/Ramallah/@31.9028455,35.1982262,14z/data=!4m5!3m4!1s0x1502d54cda2d58d1:0xbf6d4d17cc8b2c76!8m2!3d31.9037654!4d35.2034193?hl=en-US" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" class="embed-responsive-item"></iframe>
-	</div>
 
    
     <!-- Footer Start -->

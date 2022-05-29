@@ -131,7 +131,7 @@
                             <div class="product-item">
                              
                                 <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/product-1.jpg" alt="">
+                                    <img class="img-fluid w-100" src="${products.getPhotosImagePath()}" alt="">
                                 </div>
                                 <div class="text-center p-4">
                                     <a class="d-block h5 mb-2 " href="/detail/${products.id}"><i class="fa fa-eye text-primary me-2"></i>${products.productName }</a>

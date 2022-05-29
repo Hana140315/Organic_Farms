@@ -45,7 +45,7 @@ public class Product {
 	    private String productAvailbilty;
 	    
 	    @Column(nullable = true, length = 64)
-	    private String photos;
+	    private String photo;
 	    
 	    @ManyToOne(fetch=FetchType.LAZY)
 	    @JoinColumn(name="category")
@@ -94,20 +94,20 @@ public class Product {
 		
 		
 
-		public String getPhotos() {
-			return photos;
+		public String getPhoto() {
+			return photo;
 		}
 
 
-		public void setPhotos(String photos) {
-			this.photos = photos;
+		public void setPhoto(String photo) {
+			this.photo = photo;
 		}
 
 		@Transient
 		 public String getPhotosImagePath() {
-		   if (photos == null || id == null) return null;
+		   if (photo == null || id == null) return null;
 		         
-		   return "/user-photos/" + id + "/" + photos;
+		   return "/user-photos/" + id + "/" + photo;
 		   }
 		
 		public void setFarm(Farm farm) {
