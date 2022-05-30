@@ -37,3 +37,22 @@
 };
 
 api(); 
+
+/*
+
+const settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://currency-converter5.p.rapidapi.com/currency/convert?format=json&from=USD&to=CAD&amount=5",
+	"method": "GET",
+	"headers": {
+		"X-RapidAPI-Host": "currency-converter5.p.rapidapi.com",
+		"X-RapidAPI-Key": "2d30ee76bfmsh7600e5a3557f3a4p1712fejsn1b766e6330dd"
+	}
+};
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
+
+*/

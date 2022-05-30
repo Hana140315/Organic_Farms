@@ -66,7 +66,7 @@ const settings = {
 				/*for(var i=0;i<result.foods.length;i++){*/
 					for(var j=0;j<result.foods[0].foodNutrients.length;j++){
 					console.log(result.foods[0].foodNutrients[j].nutrientName);
-					document.getElementById('fact').innerHTML=result.foods[0].foodNutrients[j].nutrientName+":"+result.foods[0].foodNutrients[j].nutrientNumber;
+				/*	document.getElementById('fact').innerHTML=result.foods[0].foodNutrients[j].nutrientName+":"+result.foods[0].foodNutrients[j].nutrientNumber;*/
 					}
 					/*for(var j=0;j<result.foods.foodNutrients;j++){
 				console.log(result.foods[i].foodNutrients[j].nutrientName);
