@@ -76,12 +76,12 @@ public class UsersController {
         return "redirect:/login";
     }
     
-//    @RequestMapping("/admin")
-//    public String adminPage(Principal principal, Model model) {
-//        String username = principal.getName();
-//        model.addAttribute("currentUser", farmService.findByUsername(username));
-//        return "adminPage.jsp";
-//    }
+    @RequestMapping("/admin")
+    public String adminPage(Principal principal, Model model) {
+        String username = principal.getName();
+        model.addAttribute("currentUser", farmService.findByEmail(username));
+        return "adminpage.jsp";
+    }
     
     @GetMapping("/logout")
     public String logout(HttpSession session) {

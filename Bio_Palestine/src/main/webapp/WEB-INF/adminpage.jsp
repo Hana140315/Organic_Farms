@@ -13,7 +13,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Foody - Organic Food Website Template</title>
+    <title>Admin Page</title>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css"> <!-- change to match your file/naming structure -->
     <script src="/webjars/jquery/jquery.min.js"></script>
@@ -71,10 +71,10 @@
                     
                     <a href="/" class="nav-item nav-link">Home</a>
                 <a href="/product" class="nav-item nav-link">Products</a>
-                <a href="#" class="nav-item nav-link"><span class="text-secondary">Login</span></a>
-                <a href="#" class="nav-item nav-link"><span class="fw-bold text-primary m-0">Regester</span></a>
                 <a href="/about" class="nav-item nav-link">About Us</a>
                 <a href="/contactUs" class="nav-item nav-link">Contact Us</a>
+                <a href="/login" class="nav-item nav-link"><span class="fw-bold text-secondary">Login</span></a>
+                <a href="/register" class="nav-item nav-link"><span class="fw-bold text-primary m-0">Register</span></a>
                 </div>
                 
             </div>
