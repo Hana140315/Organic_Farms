@@ -20,8 +20,8 @@ Bio Palestine will be responsible in gathering data about all farms, shops, and 
 
 *	Majed Amria
 *	Fadi Abu Aita
-*	Malik Shaka
-*	Hana Albida
+*	Malik Shakaa
+*	Hana Albidaq
 
 
 ## 4-	Project requirements:
