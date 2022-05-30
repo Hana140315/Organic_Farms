@@ -99,7 +99,7 @@
             <p>Email: ${thisProduct.farm.email}</p>
           <div>
           <h1>Facts of Product</h1>
-          <a href=""https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/ingredients/9266/information?amount=100&unit=gram"">${thisProduct.productName }</a>
+          <a href="https://food-nutrition-information.p.rapidapi.com/foods/search?query=cheese&pageSize=1&pageNumber=1&brandOwner=Kar%20Nut%20Products%20Company">${thisProduct.productName }</a>
           <script type="js/API.js"></script>
           </div>
             

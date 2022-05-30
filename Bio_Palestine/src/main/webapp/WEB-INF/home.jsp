@@ -82,23 +82,29 @@
 
 
     <!-- Page Header Start -->
+     
     <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
             <h1 class="display-3 mb-3 animated slideInDown">Welcome ${currenUser.farmName} <br>To Your Farm </h1><br>
            	<h3>All Products</h3>
-           	  <c:forEach var="products" items="${product}">
-		       <div class="row g-4">
-                       
+           
+           	<div class="tab-content">
+                <div id="tab-1" class="tab-pane fade show p-0 active">
+                    <div class="row g-4">
+                        <c:forEach var="products" items="${product}">
                         <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
+                              <div class="position-relative bg-light overflow-hidden">
                                     <img class="img-fluid w-100" src="${products.getPhotosImagePath()}" alt="">
+   
                                 </div>
                                 <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="/detail/${products.id}">${products.productName }</a>
+                                    <a class="d-block h5 mb-2 " href="/detail/${products.id}"><i class="fa fa-eye text-primary me-2"></i>${products.productName }</a>
                                     <span class="text-primary me-1"> ${products.productPrice}$/Kilo</span>
+                                    
                                 </div>
-                                <div class="d-flex border-top">
+                                
+<div class="d-flex border-top">
                                     <small class="w-50 text-center border-end py-2">
                                         <a class="text-body" href="/edit/${products.id}/update"><i class="fa fa-pen text-primary me-2"></i>Edit</a>
                                     </small>
@@ -106,12 +112,22 @@
                                         <a class="text-body" href="/delete/${products.id}"><i class="far fa-times-circle text-primary me-2"></i>Delete</a>
                                     </small>
                                 </div>
+                        
                             </div>
                         </div>
-                        </div>
-		      </c:forEach>
+                       
+                        
+                        
+                                 </c:forEach>
+                        
+                        
+                        
+                    </div>
+                </div> 
+        </div>
         </div>
     </div>
+  
     <!-- Page Header End -->
 
 

@@ -100,16 +100,6 @@
 
 
     <!-- Product Start -->
-    <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
-                    <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
-                    <c:forEach var="category" items="${category}">
-                        <li class="nav-item me-2">
-                            <a class="btn btn-outline-primary border-2 active" data-bs-toggle="pill" href="#tab-1">${category.categoryTitle}</a>
-                        </li>
-                      </c:forEach>
-                       
-                    </ul>
-                </div>
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-0 gx-5 align-items-end">
@@ -121,34 +111,45 @@
                 </div>
         
             </div>
+                  <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
+                    <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
+                        <c:forEach var="category" items="${category}">
+                        <li class="nav-item me-2">
+                            <a class="btn btn-outline-primary border-2 active" data-bs-toggle="pill" href="#tab-1">${category.categoryTitle}</a>
+                        </li>
+                    </c:forEach>
+                    </ul>
+                </div>
+            </div>
+
+
             <div class="tab-content">
                 <div id="tab-1" class="tab-pane fade show p-0 active">
-                    <!--begin for loop-->
                     <div class="row g-4">
-                       
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-							<c:forEach var="products" items="${product}">
+                        <c:forEach var="products" items="${product}">
+                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="product-item">
-                             
-                                <div class="position-relative bg-light overflow-hidden">
+                              <div class="position-relative bg-light overflow-hidden">
                                     <img class="img-fluid w-100" src="${products.getPhotosImagePath()}" alt="">
+   
                                 </div>
                                 <div class="text-center p-4">
                                     <a class="d-block h5 mb-2 " href="/detail/${products.id}"><i class="fa fa-eye text-primary me-2"></i>${products.productName }</a>
                                     <span class="text-primary me-1"> ${products.productPrice}$/Kilo</span>
+                                    
                                 </div>
-                                
+                        
                             </div>
-                          </c:forEach>
                         </div>
-                 
-                    
                        
-                      
+                        
+                        
+                                 </c:forEach>
+                        
+                        
+                        
                     </div>
-                    <!--end foor loop-->
-                </div>
-            </div>
+                </div> 
         </div>
     </div>
     <!-- Product End -->
