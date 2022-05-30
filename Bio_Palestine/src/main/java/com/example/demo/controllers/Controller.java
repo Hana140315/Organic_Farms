@@ -111,6 +111,7 @@ public class Controller {
 		 proServce.deleteProduct(id);
 	        return "redirect:/home";
 	    }
+	 
 		@GetMapping("/edit/{id}/update")
 	    public String edit(@PathVariable("id") Long id,Model model) {
 			Product thisproduct = proServce.findbyId(id);

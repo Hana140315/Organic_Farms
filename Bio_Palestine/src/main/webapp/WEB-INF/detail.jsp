@@ -97,7 +97,11 @@
             <p>Mobile Number: ${thisProduct.farm.farmPhone}</p>
             <p>Address: ${thisProduct.farm.farmAddress}, ${thisProduct.farm.farmLocation}</p>
             <p>Email: ${thisProduct.farm.email}</p>
-          
+          <div>
+          <h1>Facts of Product</h1>
+          <a href=""https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/ingredients/9266/information?amount=100&unit=gram"">${thisProduct.productName }</a>
+          <script type="js/API.js"></script>
+          </div>
             
         </div>
     </div>

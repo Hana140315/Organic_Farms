@@ -111,28 +111,32 @@ public class ProductCategoryController {
 //        }
 //    }
 	  @PutMapping("/edit/{id}")
-	    public String update( @ModelAttribute("product")Product product,BindingResult result,@PathVariable("id")Long id,@RequestParam("photo") MultipartFile multipartFile,Principal principal,HttpSession session) throws IOException {
-	 
+	    public String update(@Valid @ModelAttribute("selectedProduct")Product product,BindingResult result,@RequestParam("photo") MultipartFile multipartFile,Principal principal,HttpSession session) throws IOException {
+			String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
 //		  if (result.hasErrors()) {
 //	        	System.out.println(">><<>><<");
 //
-//	            return "addproduct.jsp";
+//	            return "edit.jsp";
 //	        } else {
-	        
-	        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-	        product.setPhoto(fileName);
-	         String username = principal.getName();
-	    	   session.setAttribute("currenUser", farmServ.findByEmail(username));
-	        Long userId=(Long)session.getAttribute("userId");
-	    		Farm currenUser=farmServ.findbyId(userId);
-	    		product.setFarm(farmServ.findByEmail(username));
-	    		proServce.updateProduct(product);
-	    		 Product savedProduct = proServce.updateProduct(product);
-	        String uploadDir = "user-photos/" + savedProduct.getId();
-			 System.out.println("------->"+savedProduct.getPhotosImagePath());
-	        FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
+		   String username = principal.getName();
+	   	   Farm currenUser=farmServ.findByEmail(username);
+	       System.out.println("*******"+currenUser.getId());
+	   	   
+	    	product.setFarm(currenUser);
+	    
+		    product.setPhoto(fileName);
+		    Product savedProduct = proServce.updateProduct(product);
+		    String uploadDir = "user-photos/" + savedProduct.getId();
+		    System.out.println("------->"+savedProduct.getPhotosImagePath());
+		    FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
+	   		proServce.updateProduct(product);
+	   		
+		  System.out.println("------->"+product.getId());
+		  
+	       
 	        
 	        return "redirect:/home";
 	    }
 	
 }
+//}
