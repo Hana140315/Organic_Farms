@@ -46,6 +46,42 @@
 
     <!-- Template Stylesheet -->
     <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet">
+    
+    
+<script >
+var productName=document.getElementById('productName');
+const settings = {
+				"async": true,
+				"crossDomain": true,
+				"url": "https://food-nutrition-information.p.rapidapi.com/foods/search?query="+productName,
+				"method": "GET",
+				"headers": {
+					"X-RapidAPI-Host": "food-nutrition-information.p.rapidapi.com",
+					"X-RapidAPI-Key": "67cbb8aa11mshfa39987e8db24fcp1f9323jsn984d9d5d4e7c"
+				}
+			};
+
+			$.ajax(settings).done(function (response) {
+				var result=response;
+				/*for(var i=0;i<result.foods.length;i++){*/
+					for(var j=0;j<result.foods[0].foodNutrients.length;j++){
+					console.log(result.foods[0].foodNutrients[j].nutrientName);
+					document.getElementById('fact').innerHTML=result.foods[0].foodNutrients[j].nutrientName+":"+result.foods[0].foodNutrients[j].nutrientNumber;
+					}
+					/*for(var j=0;j<result.foods.foodNutrients;j++){
+				console.log(result.foods[i].foodNutrients[j].nutrientName);
+				}*/
+				
+				/*for(var i=0;i<result.foods.length;i++){
+					for(var j=0;j<result.foods[i].foodNutrients;j++){
+	    		/*console.log(result.foods[i].foodNutrients);
+	    		console.log(result.foods[i].foodNutrients[j].nutrientName);
+	    		document.getElementById('fact').innerHTML=result;
+				}
+				}*/
+			});
+</script>  
+    
 </head>
 
 <body>
@@ -68,8 +104,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    
-                    <a href="/" class="nav-item nav-link">Home</a>
+                <a href="/" class="nav-item nav-link">Home</a>
                 <a href="/product" class="nav-item nav-link">Products</a>
                 <a href="/about" class="nav-item nav-link">About Us</a>
                 <a href="/contactUs" class="nav-item nav-link">Contact Us</a>
@@ -86,7 +121,7 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
-            <h1 class="display-3 mb-3 animated slideInDown">About ${thisProduct.productName }</h1>
+            <h1 class="display-3 mb-3 animated slideInDown">About <span id="productName">${thisProduct.productName}</span></h1>
            <img alt="" src="${thisProduct.getPhotosImagePath()}"> 
             <h4>Description:</h4>
             <p>${thisProduct.categoryType.categoryDescription }</p>
@@ -98,9 +133,11 @@
             <p>Address: ${thisProduct.farm.farmAddress}, ${thisProduct.farm.farmLocation}</p>
             <p>Email: ${thisProduct.farm.email}</p>
           <div>
-          <h1>Facts of Product</h1>
-          <a href="https://food-nutrition-information.p.rapidapi.com/foods/search?query=cheese&pageSize=1&pageNumber=1&brandOwner=Kar%20Nut%20Products%20Company">${thisProduct.productName }</a>
-          <script type="js/API.js"></script>
+          <h1>Facts of This Product</h1>
+          <p id="fact">
+          
+          </p>
+         
           </div>
             
         </div>
@@ -156,11 +193,12 @@
 
 
    <!-- Template Javascript -->
+
     <script  src="${pageContext.request.contextPath}/js/main.js"></script>
     <!-- JavaScript Libraries -->
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-   
+    
     <script src="${pageContext.request.contextPath}/lib/wow/wow.min.js"></script>
     <script src="${pageContext.request.contextPath}/lib/easing/easing.min.js"></script>
     <script src="${pageContext.request.contextPath}/lib/waypoints/waypoints.min.js"></script>

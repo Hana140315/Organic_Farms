@@ -72,6 +72,10 @@
                     <a href="/" class="nav-item nav-link">Home</a>
                 <a href="/product/new" class="nav-item nav-link">Add Products</a>
                  <a href="/category/new" class="nav-item nav-link">Add Category</a>
+               <c:if test="${currenUser.getRoles().get(0).getId()==2}">
+                <a href="/admin" class="nav-item nav-link"><span class="fw-bold text-secondary">Admin</span></a>
+               </c:if>
+
                 <a href="/logout" class="nav-item nav-link"><span class="fw-bold text-primary m-0">Log out</span></a>
                 </div>
                 

@@ -41,6 +41,8 @@ public class UsersController {
         // 1
        String username = principal.getName();
        session.setAttribute("currenUser", farmService.findByEmail(username));
+//       Farm test=farmService.findByEmail(username);
+//       System.out.println(test.getRoles().get(1).getName());
        List<Product> products = proServce.allProductforFarm(farmService.findByEmail(username));
        model.addAttribute("product",products);
         return "home.jsp";
@@ -70,6 +72,7 @@ public class UsersController {
             return "register.jsp";
         }
     	farmService.saveWithUserRole(user);
+    	
 //    	farmService.saveUserWithAdminRole(user);
 //    	session.setAttribute("userId", user.getId());
     	System.out.print(user.getId());

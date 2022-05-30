@@ -70,11 +70,9 @@
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                     
                     <a href="/" class="nav-item nav-link">Home</a>
-                <a href="/product" class="nav-item nav-link">Products</a>
-                <a href="/about" class="nav-item nav-link">About Us</a>
-                <a href="/contactUs" class="nav-item nav-link">Contact Us</a>
-                <a href="/login" class="nav-item nav-link"><span class="fw-bold text-secondary">Login</span></a>
-                <a href="/register" class="nav-item nav-link"><span class="fw-bold text-primary m-0">Register</span></a>
+                 <a href="/category/new" class="nav-item nav-link">Add Category</a>
+                <a href="/logout" class="nav-item nav-link"><span class="fw-bold text-primary m-0">Log out</span></a>
+
                 </div>
                 
             </div>
@@ -86,8 +84,8 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
-            <h1 class="display-3 mb-3 animated slideInDown">About us</h1>
-            <p>Bio Market for Farmers to share with you organic products</p>
+            <h1 class="display-3 mb-3 animated slideInDown">Admin page</h1>
+            <h1 class="display-3 mb-3 animated slideInDown">Welcome ${currenUser.farmName} <br>To Your page </h1><br>
         </div>
     </div>
     <!-- Page Header End -->

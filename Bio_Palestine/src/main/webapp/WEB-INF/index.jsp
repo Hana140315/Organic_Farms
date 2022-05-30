@@ -234,9 +234,7 @@
                         
                             </div>
                         </div>
-                       
-                        
-                        
+                    
                                  </c:forEach>
                         
                         
