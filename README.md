@@ -68,8 +68,10 @@ The project will provide the following functions:
 
 ![ERD Diagram](https://github.com/Hana140315/Organic_Farms/blob/master/DB/ERD2.PNG)
 
-## 8- Bio Palestine prototype:
+## 8- a- Bio Palestine prototype:
 ![Wirefame](https://github.com/Hana140315/Organic_Farms/blob/master/Documentation/Wireframe.pdf)
+
+## 8- b- Bio Palestine homepage
 
 
 ## 9- 9-	Bio Palestine Validations:
