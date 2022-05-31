@@ -70,7 +70,9 @@
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                     
                     <a href="/" class="nav-item nav-link">Home</a>
+                    <c:if test="${currenUser.getRoles().get(0).getId()!=2}">
                 <a href="/product/new" class="nav-item nav-link">Add Products</a>
+                </c:if>
                  <a href="/category/new" class="nav-item nav-link">Add Category</a>
                <c:if test="${currenUser.getRoles().get(0).getId()==2}">
                 <a href="/admin" class="nav-item nav-link"><span class="fw-bold text-secondary">Admin</span></a>
@@ -86,10 +88,12 @@
 
 
     <!-- Page Header Start -->
-     
+   
     <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
             <h1 class="display-3 mb-3 animated slideInDown">Welcome ${currenUser.farmName} <br>To Your Farm </h1><br>
+            
+              <c:if test="${currenUser.getRoles().get(0).getId()!=2}">
            	<h3>All Products</h3>
            
            	<div class="tab-content">
@@ -129,6 +133,7 @@
                     </div>
                 </div> 
         </div>
+            </c:if>
         </div>
     </div>
   
