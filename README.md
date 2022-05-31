@@ -68,11 +68,10 @@ The project will provide the following functions:
 
 ![ERD Diagram](https://github.com/Hana140315/Organic_Farms/blob/master/DB/ERD2.PNG)
 
-## 8- a- Bio Palestine prototype:
-![Wirefame](https://github.com/Hana140315/Organic_Farms/blob/master/Documentation/Wireframe.pdf)
+## 8-  Bio Palestine prototype:
+a- ![Wirefame](https://github.com/Hana140315/Organic_Farms/blob/master/Documentation/Wireframe.pdf)
 
-## 8- b- Bio Palestine homepage
-
+b- ![homepage](https://github.com/Hana140315/Organic_Farms/blob/master/Screenshot%202022-05-31%20130456.png)
 
 ## 9- 9-	Bio Palestine Validations:
 1.	Email is required for creating account, and it could not be empty, and should follow the email format
